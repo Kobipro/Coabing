@@ -1,0 +1,10 @@
+nav{
+	text-align: center;
+    }
+
+li{
+	display: inline-flex;
+	text-decoration: none;
+	margin: 15px;
+	}
+    

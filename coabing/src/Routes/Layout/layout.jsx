@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-
+import "./layout.component.styles.css"
 const Layout = () => {
   return (
     <>
@@ -18,7 +18,7 @@ const Layout = () => {
             <Link to="/Womens">Womens </Link>
           </li>
           <li>
-            <Link to="/SignUp">SIGN UP </Link>
+            <Link to="/SignUp">Sign up </Link>
           </li>
           <li>
             <Link to="/SignIn">Sign in </Link>
