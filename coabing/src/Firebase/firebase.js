@@ -6,18 +6,20 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCgeq4VKGVl2Iim1A-A8I8hkJbADv4napE",
-    authDomain: "emart-482df.firebaseapp.com",
-    projectId: "emart-482df",
-    storageBucket: "emart-482df.appspot.com",
-    messagingSenderId: "639576138911",
-    appId: "1:639576138911:web:170b28738c16d8010caeaa"
+  apiKey: "AIzaSyCgeq4VKGVl2Iim1A-A8I8hkJbADv4napE",
+  authDomain: "emart-482df.firebaseapp.com",
+  projectId: "emart-482df",
+  storageBucket: "emart-482df.appspot.com",
+  messagingSenderId: "639576138911",
+  appId: "1:639576138911:web:170b28738c16d8010caeaa"
 };
- // eslint-disable-next-line
+// eslint-disable-next-line
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -74,3 +76,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);

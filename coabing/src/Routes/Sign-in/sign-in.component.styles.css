@@ -1,4 +1,5 @@
-.sign-up-container {
+.sign-in-container {
+    margin-left: 500px;
     display: flex;
     flex-direction: column;
     width: 380px;
